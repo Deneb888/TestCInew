@@ -138,11 +138,12 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 					else cout << "Device not found" << endl;
 				}
 
-				//c = cmd.compare("resettrim");
+				c = cmd.compare("resettrim");
 
-				//if (c == 0) {
-				//	theInterfaceObject.ResetTrim();				// Always do this after loading trim file.
-				//}
+				if (c == 0) {
+					theInterfaceObject.ReadTrimData();
+					theInterfaceObject.ResetTrim();				// Always do this after loading trim file.
+				}
 
 				cout << ">";
 				res = cmd.compare("exit");
